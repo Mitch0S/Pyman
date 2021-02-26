@@ -59,7 +59,7 @@ while True:  # This is the actual game code.
             else:
                 print('Incorrect guess, '+ str(attempts_remaining - 1)+" guesses remaining.")
                 attempts_remaining = attempts_remaining - 1
-                guessed_letters = guessed_letters+guess
+                guessed_letters.append(guess)
 
             if word != showWord:
                 print("\n"+showWord)
