@@ -11,21 +11,30 @@ ______
 """
 
 import random
+amtFileWords = 0
+fileWords = open("words.txt", "r+").readlines()
+for line in fileWords:
+    amtFileWords = +1
+words = []
 
-print(title)
-showWord = ""
+print(title)  # Prints the title variable
+showWord = ""  # Declaration of initial values of variables
 guesses = [" "]
 amtWords = 0
 attempts_remaining = 6
 guessed_letters = []
 guess = ""
-allowed_values = "ABCDEFGHIJKLMNOPQRSTUBWXYZ' '"
-a = " "
+a = ""
+allowed_values = "ABCDEFGHIJKLMNOPQRSTUBWXYZ' '" # Allowed input answers
 
-words = ["CAT", "DOG", "APPLE", "CAR", "TWO WORDS", "THREE LETTER WORD"]
+if amtFileWords < 1: # If the text file has insufficient values, it will use this default array.
+    words = ["CAT", "DOG", "APPLE", "CAR", "TWO WORDS", "THREE LETTER WORD"]
+elif amtFileWords > 0:
+    for line in fileWords:
+        words.append(line.strip())
 
 try:
-    for i in words:
+    for word in words:
         amtWords = amtWords + 1
     if amtWords < 1:
         print("Please enter words into the 'words' array.")
@@ -40,8 +49,7 @@ for i in word:
     if i == " ":
         wordLength = wordLength - 1
 
-start = str("This is a {} letter word.").format(wordLength)
-print(start) # I bet you're happy about this :)
+print(str("This is a {} letter word.").format((wordLength))) # I bet you're happy about this :)
 
 for i in word:
     a = a+i+" "
