@@ -26,10 +26,10 @@ try:
     guessed_letters = []
     guess = ""
     a = ""
-    allowed_values = "ABCDEFGHIJKLMNOPQRSTUVWXYZ' '" # Allowed input answers
+    allowed_values = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" # Allowed input answers
 
     if amtFileWords < 1: # If the text file has insufficient values, it will use this default array.
-        words = ["CAT", "DOG", "APPLE", "CAR", "TWO WORDS", "THREE LETTER WORD"]
+        words = ["CAT", "DOG", "APPLE", "CAR"]
     elif amtFileWords > 0:
         for line in fileWords:
             words.append(line.strip())
